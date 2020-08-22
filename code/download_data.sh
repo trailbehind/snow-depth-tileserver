@@ -45,8 +45,8 @@ if [[ -v "S3_URL" ]]; then
       --header "Cache-Control:max-age=21600" \
       build/snow_depth.mbtiles s3://vectortiles-dev.gaiagps.com/us-snow-depth-raster/
   aws s3 sync \
-      --delete
-      s3://vectortiles-dev.gaiagps.com/us-snow-depth-raster/
+      --delete \
+      s3://vectortiles-dev.gaiagps.com/us-snow-depth-raster/ \
       $S3_URL
   aws s3 rm --recursive s3://vectortiles-dev.gaiagps.com/us-snow-depth-raster/
 fi
